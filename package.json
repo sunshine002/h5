@@ -1,0 +1,21 @@
+{
+  "name": "h5",
+  "description": "h5 demo",
+  "main": "index.js",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-requirejs-optimize": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-webserver": "^0.9.1",
+    "islider.js": "^2.2.2",
+    "jquery": "git+https://git.ms.netease.com/fe/jquery",
+    "requirejs": "git+https://git.ms.netease.com/fe/requirejs"
+  },
+  "scripts": {
+    "start": "gulp"
+  }
+}

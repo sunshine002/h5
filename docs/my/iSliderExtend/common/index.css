@@ -1,0 +1,250 @@
+/**
+ * @file iSlider.css
+ */
+
+
+/**
+ * ===========================
+ * iSlider
+ * ===========================
+ */
+
+.islider-outer {
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.islider-outer>li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow: hidden;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    box-pack: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+}
+
+.islider-img>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.islider-sliding {
+    z-index: 0;
+}
+
+.islider-sliding-focus {
+    z-index: 1;
+}
+
+
+/**
+ * ===========================
+ * iSlider.plugin.button
+ * ===========================
+ */
+
+.islider-btn-outer {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: block;
+    background-color: #777777;
+}
+
+.islider-btn-outer.left {
+    left: 5%;
+}
+
+.islider-btn-outer.right {
+    right: 5%;
+}
+
+.islider-btn-inner {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.islider-btn-outer.left>.islider-btn-inner {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.islider-btn-outer.right>.islider-btn-inner {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+
+/**
+ * ===========================
+ * iSlider.plugin.dot
+ * ===========================
+ */
+
+.islider-dot-wrap {
+    width: 80%;
+    height: 10%;
+    margin: 0 auto;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    text-align: center;
+}
+
+.islider-dot {
+    position: relative;
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    list-style: none;
+    margin: 5px;
+}
+
+.islider-dot.active {
+    background-color: #ffffff;
+}
+
+/* 基于iSlide.css扩展的样式 */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+}
+
+// 场景容器
+#stage {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#stage .img {
+    width: 100%;
+}
+
+#stage .page {
+    height: 100%;
+    width: 100%;
+    overflow: hidden
+}
+
+/*场景加载样式*/ 
+.stage-loading {
+    padding-top: 40%;
+}
+
+.stage-loading i {
+    display: block;
+    margin: 0 auto;
+    width: 6rem;
+    height: 6rem;
+    background: url(./img/loading.png#inline) no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+    /* border-radius: 50%; */
+    /* box-shadow: 0 0 6px #8EA5DA; */
+}
+
+ /* 横屏提示 */
+.stage-direction {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url(./img/direction.png#inline) no-repeat #000;
+    background-position: center 36%;
+    background-size: 14% auto;
+    color: #FFF;
+    font-size: 0.8rem;
+    padding-top: 42%;
+    box-sizing: border-box;
+}
+
+@media all and (orientation: landscape) {
+    .stage-direction {
+        display: block;
+    }
+}
+
+ /* 引导箭头 */
+.stage-guide {
+    width: 3em;
+    height: 3em;
+    background: url(./img/arrow.png#inline) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    z-index: 900;
+    margin-left: -2em;
+    animation: stageGuide 1.2s infinite;
+}
+
+@keyframes stageGuide {
+    0% {
+        opacity: 0.4;
+        transform: translateY(0px)
+    }
+    30% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+}
