@@ -21,3 +21,9 @@
 - docs 编译后的文件所放的目录
 
 最终为了不依赖node_modules，仅使用编译后的文件,放在docs目录中了，目的是减少http请求及压缩合并依赖相关的文件
+
+### 预览
+- https://lifenping.github.io/h5
+- 项目开启：npm start
+打开服务器页面docs目录查看效果
+

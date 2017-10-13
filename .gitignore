@@ -1,5 +1,7 @@
-test# Mac OS X
+# Mac OS X
 .DS_Store
+.vscode
+package-lock.json
 
 # JetBrains IDE
 .idea
@@ -11,7 +13,7 @@ bower_components
 .remote
 
 # 编译输出目录
-build
+# docs
 
 # npm模块安装目录
 node_modules
@@ -23,11 +25,11 @@ npm-debug.log
 release
 
 # 不提交的本地配置文件
-miaow.local.js
+# src/web/desktop/pages/questions.js
 
 # 缓存目录
-cache
+
 
 # 运行文件
-npm-debug.log
-debug.log
+
+

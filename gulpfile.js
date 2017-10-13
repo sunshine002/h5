@@ -1,3 +1,11 @@
+// module.paths.unshift('/usr/lib/node_modules');
+// console.log(module.paths);
+
+// 全局变量法
+// global._root = 'node_modules';
+// var path = require('path');
+// var gulp = require(path.join(_root,'gulp'));
+
 var gulp = require('gulp');
 /**
  * gulp-livereload的使用
@@ -102,13 +110,18 @@ gulp.task('rjs', function () {
 // });
 
 /**
- * 打包合并js文件，应用的require.js
+ * 应用的require.js，对requirejs进行压缩与合并
  */
+// 压缩依赖j
 var requirejsOptimize = require('gulp-requirejs-optimize');
+// 合并文件
+var concat = require("gulp-concat");
 gulp.task('rjs', function () {
 	return gulp.src(['./src/my/iSliderVertical/js/index.js','./src/my/iSliderExtend/js/index.js','./src/my/iSliderExtend/common/index.js'])
 		// 处理目标文件
 		.pipe(requirejsOptimize())
+		// 合并文件
+		.pipe(concat("index.js"))
 		// 输出编译后的文件,docs前不能加 ./  !!!!!!!!!!!!!!
 		// .pipe(gulp.dest('./docs/my/iSliderVertical/js'));
 		.pipe(gulp.dest('./docs/my/iSliderVertical/js'))
