@@ -8,7 +8,7 @@
 - gulp: 构建工具用的gulp
 
 ### 安装依赖
-- npm install
+- npm install  
 
 ## 启动
 - npm start
